@@ -1,10 +1,13 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { GROWTH_DATA } from '../constants';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
+      <SEO 
+        title="About Us | 100% Black-Owned Engineering Firm"
+        description="Learn about Lorha Spaces' journey since 2016. Discover our vision for sustainable infrastructure and our commitment to youth skills development in South Africa."
+      />
       <div className="bg-gray-900 text-white py-20 mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Us</h1>
@@ -30,41 +33,10 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Growth Chart */}
-        <div className="mb-24 bg-gray-50 p-10 rounded-xl">
-           <div className="text-center mb-10">
-             <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Impact & Growth</h2>
-             <p className="text-gray-500">Consistent revenue growth and community reach since inception.</p>
-           </div>
-           
-           <div className="h-[400px] w-full">
-             <ResponsiveContainer width="100%" height="100%">
-               <BarChart
-                 data={GROWTH_DATA}
-                 margin={{
-                   top: 20,
-                   right: 30,
-                   left: 20,
-                   bottom: 5,
-                 }}
-               >
-                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                 <XAxis dataKey="year" />
-                 <YAxis />
-                 <Tooltip 
-                    contentStyle={{ backgroundColor: '#fff', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}
-                 />
-                 <Bar dataKey="revenue" fill="#0d9488" name="Revenue (ZAR)" radius={[4, 4, 0, 0]} />
-                 <Bar dataKey="users" fill="#111827" name="Beneficiaries" radius={[4, 4, 0, 0]} />
-               </BarChart>
-             </ResponsiveContainer>
-           </div>
-        </div>
-
         {/* Community Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <img src="https://picsum.photos/800/800?random=20" alt="Community Training" className="rounded-lg shadow-lg" />
+              <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800" alt="Youth training session for AutoCAD and Civil 3D skills" className="rounded-lg shadow-lg" />
             </div>
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Community & Social Responsibility</h2>

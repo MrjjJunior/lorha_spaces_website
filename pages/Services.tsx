@@ -1,10 +1,30 @@
 import React from 'react';
 import { SERVICES_DATA } from '../constants';
 import { Check } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": SERVICES_DATA.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description
+      }
+    }))
+  };
+
   return (
     <div className="pt-20">
+      <SEO 
+        title="Architecture & Civil Engineering Services"
+        description="Explore our specialized services: Civil & Structural Engineering, Water & Sanitation, Municipal Infrastructure, Roads, and Commercial Architecture."
+        schema={serviceSchema}
+      />
       <div className="bg-teal-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
@@ -41,10 +61,9 @@ const Services: React.FC = () => {
                  </div>
                  <div className="flex-1 w-full">
                    <div className="aspect-w-16 aspect-h-10 rounded-xl overflow-hidden shadow-2xl bg-gray-200">
-                     {/* Placeholder image logic based on index */}
                      <img 
-                      src={`https://picsum.photos/800/600?random=${index + 30}`} 
-                      alt={service.title} 
+                      src={`https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800&random=${index}`} 
+                      alt={`Illustration of ${service.title} capabilities`} 
                       className="object-cover w-full h-full"
                     />
                    </div>

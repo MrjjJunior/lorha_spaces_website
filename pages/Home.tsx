@@ -2,17 +2,44 @@ import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SERVICES_DATA } from '../constants';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Lorha Spaces Architecture & Engineering",
+    "alternateName": "Lorha Spaces",
+    "url": window.location.origin,
+    "logo": "https://picsum.photos/200/200", // Replace with real logo URL
+    "description": "Lorha Spaces is a Level 1 BBBEE multidisciplinary architecture and engineering firm in South Africa specializing in infrastructure and social impact.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+27-74-498-7146",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/lorha-spaces"
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO 
+        title="Leading Architecture & Engineering Consultancy"
+        description="Lorha Spaces provides multidisciplinary architecture, engineering, and project management services in South Africa. 100% Black-owned, Level 1 BBBEE firm."
+        schema={organizationSchema}
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center bg-gray-900 text-white overflow-hidden">
-        {/* Background Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/1920/1080?grayscale&blur=2" 
-            alt="Architectural Blueprint" 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920" 
+            alt="Modern sustainable architectural building designed by Lorha Spaces" 
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
@@ -74,7 +101,7 @@ const Home: React.FC = () => {
             </div>
             <div className="relative">
               <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-2xl">
-                <img src="https://picsum.photos/800/600?random=10" alt="Meeting" className="object-cover w-full h-full" />
+                <img src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=800" alt="Professional civil engineering team planning municipal infrastructure" className="object-cover w-full h-full" />
               </div>
               <div className="absolute -bottom-10 -left-10 bg-gray-900 text-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block">
                 <p className="text-2xl font-bold mb-2">Since 2016</p>

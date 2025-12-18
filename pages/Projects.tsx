@@ -1,9 +1,14 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
+import SEO from '../components/SEO';
 
 const Projects: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Project Portfolio | Engineering & Architectural Excellence"
+        description="Browse our successful project delivery in municipal roads, retail complexes, and water sanitation systems across South Africa."
+      />
       <div className="bg-gray-50 py-20 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Projects</h1>
@@ -20,7 +25,7 @@ const Projects: React.FC = () => {
               <div className="relative overflow-hidden rounded-lg mb-4 shadow-md aspect-w-16 aspect-h-12">
                 <img 
                   src={project.image} 
-                  alt={project.title} 
+                  alt={`${project.title} - ${project.category} project by Lorha Spaces`} 
                   className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>

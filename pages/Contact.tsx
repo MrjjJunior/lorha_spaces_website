@@ -1,9 +1,14 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Contact Us | Lorha Spaces Engineering"
+        description="Get in touch with Lorha Spaces for professional architecture and engineering consultations. Offices in South Africa."
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
